@@ -27,24 +27,44 @@ const createRestoCardTemplate = (resto) => `
       </div>
     </div>
   `;
+/*
+  | details_resto
+    | gambar resto
+    | nama resto
+    | Rating
+    | Lokasi
+    | Kota
+    | Deskripsi Full
+  | Resto Menu
+  | Add To Favorite Button
+  | Comments Section
+*/
 
 // eslint-disable-next-line no-unused-vars
 const createRestoDetailsTemplate = (resto) => `
-  <div class="container_detail_resto">
-    <div class="container_resto_info">
-      <div class="img-info">
-        <img src="${
-          API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId
-        }" width="100px"/>
-      </div>
-      <div class="resto_info">
-        <p>test</p>
-        <p>HELLOOOOO</p>
-      </div>
+  <section class="resto_wrapper" aria-label="Restaurant Information">
+    <div class="img_resto_container">
+      <img class="img_resto" src="${
+        API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId
+      }" alt="restaurant-image" />
     </div>
 
-    
-  </div>
+    <div class="resto_details">
+      <h1 class="resto_name">${resto.name}</h1>
+      <div class="resto_information">
+        <h3>Location</h3>
+        <p>${resto.address}</p>
+        <h3>City</h3>
+        <p>${resto.city}</p>
+        <h3>Description</h3>
+        <p>${resto.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu_wrapper" id="menu_wrapper">
+      
+  </section>
 `;
 
 export { createRestoCardTemplate, createRestoDetailsTemplate };
