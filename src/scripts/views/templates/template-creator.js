@@ -74,6 +74,10 @@ const createRestoDetailsTemplate = (resto) => `
         <p>${resto.description}</p>
       </div>
     </div>
+    
+    <div>
+      <button class="add_to_fav">Add To Favorite</button>
+    </div>
   </section>
   <hr>
   <section class="menu_wrapper" id="menu_wrapper">
