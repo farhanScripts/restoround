@@ -35,11 +35,25 @@ const createRestoCardTemplate = (resto) => `
     | Lokasi
     | Kota
     | Deskripsi Full
-  | Resto Menu
-  | Add To Favorite Button
-  | Comments Section
-*/
+    | Resto Menu
+    | Add To Favorite Button
+    | Comments Section
+    */
+const createMenuItems = (items) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  items.map((item) => `<li>${item.name}</li>`).join('');
 
+const createCommentsItems = (comments) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  comments.map(
+    (comment) => `
+    <div class="comments">
+      <h1>${comment.name}</h1>
+      <p>${comment.date}</p>
+      <p>${comment.review}</p>
+    </div> 
+    `
+  );
 // eslint-disable-next-line no-unused-vars
 const createRestoDetailsTemplate = (resto) => `
   <section class="resto_wrapper" aria-label="Restaurant Information">
@@ -61,9 +75,25 @@ const createRestoDetailsTemplate = (resto) => `
       </div>
     </div>
   </section>
-
+  <hr>
   <section class="menu_wrapper" id="menu_wrapper">
-      
+      <div>
+        <h1 class="menu_detail">Our Menus</h1>
+        <ul id="menu_list">
+          ${createMenuItems(resto.menus.foods)}
+        </ul> 
+      </div>
+      <div>
+        <h1 class="drink_detail">Our Drinks</h2>
+        <ul id="drinks_list">
+          ${createMenuItems(resto.menus.drinks)}
+        </ul> 
+      </div>
+  </section>
+
+  <section class="comments_wrapper">
+    <h1>Customer reviews</h1>
+    ${createCommentsItems(resto.customerReviews)}
   </section>
 `;
 
