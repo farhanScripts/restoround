@@ -38,8 +38,8 @@ const createRestoDetailsTemplate = (resto) => `
         }" width="100px"/>
       </div>
       <div class="resto_info">
-        <p>testing ajaa</p>
-        <p>buat commit github</p>
+        <p>test</p>
+        <p>HELLOOOOO</p>
       </div>
     </div>
 
