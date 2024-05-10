@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import API_ENDPOINT from '../../globals/api-endpoint';
 
 const createRestoCardTemplate = (resto) => `
@@ -37,7 +38,8 @@ const createRestoDetailsTemplate = (resto) => `
         }" width="100px"/>
       </div>
       <div class="resto_info">
-        <p>test</p>
+        <p>testing ajaa</p>
+        <p>buat commit github</p>
       </div>
     </div>
 
