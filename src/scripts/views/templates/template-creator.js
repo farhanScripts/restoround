@@ -74,10 +74,6 @@ const createRestoDetailsTemplate = (resto) => `
         <p>${resto.description}</p>
       </div>
     </div>
-    
-    <div>
-      <button class="add_to_fav">Add To Favorite</button>
-    </div>
   </section>
   <hr>
   <section class="menu_wrapper" id="menu_wrapper">
@@ -101,4 +97,21 @@ const createRestoDetailsTemplate = (resto) => `
   </section>
 `;
 
-export { createRestoCardTemplate, createRestoDetailsTemplate };
+const createLikeButton = () => `
+      <button aria-label="like this movie" id="button-like" class="like">
+         <i class="fa fa-heart-o" aria-hidden="true"></i>
+      </button>
+`;
+
+const createLikedButton = () => `
+      <button aria-label="unlike this movie" id="button-liked" class="like">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </button>
+    `;
+
+export {
+  createRestoCardTemplate,
+  createRestoDetailsTemplate,
+  createLikeButton,
+  createLikedButton,
+};
