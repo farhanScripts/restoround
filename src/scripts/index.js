@@ -2,6 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 // const hamburger = document.querySelector('.hamburger');
 // hamburger.addEventListener('click', () => {
@@ -21,4 +22,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });

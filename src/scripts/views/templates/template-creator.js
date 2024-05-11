@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import API_ENDPOINT from '../../globals/api-endpoint';
 
 const createRestoCardTemplate = (resto) => `
@@ -26,23 +27,91 @@ const createRestoCardTemplate = (resto) => `
       </div>
     </div>
   `;
+/*
+  | details_resto
+    | gambar resto
+    | nama resto
+    | Rating
+    | Lokasi
+    | Kota
+    | Deskripsi Full
+    | Resto Menu
+    | Add To Favorite Button
+    | Comments Section
+    */
+const createMenuItems = (items) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  items.map((item) => `<li>${item.name}</li>`).join('');
 
+const createCommentsItems = (comments) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  comments.map(
+    (comment) => `
+    <div class="comments">
+      <h1>${comment.name}</h1>
+      <p>${comment.date}</p>
+      <p>${comment.review}</p>
+    </div> 
+    `
+  );
 // eslint-disable-next-line no-unused-vars
 const createRestoDetailsTemplate = (resto) => `
-  <div class="container_detail_resto">
-    <div class="container_resto_info">
-      <div class="img-info">
-        <img src="${
-          API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId
-        }" width="100px"/>
-      </div>
-      <div class="resto_info">
-        <p>test</p>
-      </div>
+  <section class="resto_wrapper" aria-label="Restaurant Information">
+    <div class="img_resto_container">
+      <img class="img_resto" src="${
+        API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId
+      }" alt="restaurant-image" />
     </div>
 
-    
-  </div>
+    <div class="resto_details">
+      <h1 class="resto_name">${resto.name}</h1>
+      <div class="resto_information">
+        <h3>Location</h3>
+        <p>${resto.address}</p>
+        <h3>City</h3>
+        <p>${resto.city}</p>
+        <h3>Description</h3>
+        <p>${resto.description}</p>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="menu_wrapper" id="menu_wrapper">
+      <div>
+        <h1 class="menu_detail">Our Menus</h1>
+        <ul id="menu_list">
+          ${createMenuItems(resto.menus.foods)}
+        </ul> 
+      </div>
+      <div>
+        <h1 class="drink_detail">Our Drinks</h2>
+        <ul id="drinks_list">
+          ${createMenuItems(resto.menus.drinks)}
+        </ul> 
+      </div>
+  </section>
+
+  <section class="comments_wrapper">
+    <h1>Customer reviews</h1>
+    ${createCommentsItems(resto.customerReviews)}
+  </section>
 `;
 
-export { createRestoCardTemplate, createRestoDetailsTemplate };
+const createLikeButton = () => `
+      <button aria-label="like this movie" id="button-like" class="like">
+         <i class="fa fa-heart-o" aria-hidden="true"></i>
+      </button>
+`;
+
+const createLikedButton = () => `
+      <button aria-label="unlike this movie" id="button-liked" class="like">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </button>
+    `;
+
+export {
+  createRestoCardTemplate,
+  createRestoDetailsTemplate,
+  createLikeButton,
+  createLikedButton,
+};
