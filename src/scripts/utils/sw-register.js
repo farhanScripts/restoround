@@ -12,4 +12,4 @@ const swRegister = async () => {
   }
 };
 
-export default swRegister();
+export default swRegister;
