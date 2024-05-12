@@ -91,8 +91,24 @@ const createRestoDetailsTemplate = (resto) => `
       </div>
   </section>
 
+
   <section class="comments_wrapper">
     <h1>Customer reviews</h1>
+    <section class="comment_input_wrapper" id="comment-input-container">
+      <form class="comment-form" id="comment-form" aria-label="comment form" action"#">
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <textarea type="text" id="Name" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="review">Add Review</label>
+          <textarea type="text" id="review" class="form-control"></textarea>
+        </div>
+        <div class="form-group button">
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </section>
     ${createCommentsItems(resto.customerReviews)}
   </section>
 `;

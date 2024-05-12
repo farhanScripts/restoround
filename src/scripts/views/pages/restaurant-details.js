@@ -13,8 +13,8 @@ const RestaurantDetails = {
     `;
   },
   async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantDBSource.detailRestaurant(url.id);
+    const urlLink = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestaurantDBSource.detailRestaurant(urlLink.id);
     const restoContainer = document.querySelector('#resto-details');
     restoContainer.innerHTML = createRestoDetailsTemplate(restaurant);
     LikeButtonInitiator.init({

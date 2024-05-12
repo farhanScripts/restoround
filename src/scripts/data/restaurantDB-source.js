@@ -12,8 +12,6 @@ class RestaurantDBSource {
     const responseJson = await response.json();
     return responseJson.restaurant;
   }
-
-  // FITUR FAVORITE DLL BELUM
 }
 
 export default RestaurantDBSource;

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { openDB } from 'idb';
 import CONFIG from '../globals/config';
 
