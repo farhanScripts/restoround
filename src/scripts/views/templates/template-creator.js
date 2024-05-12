@@ -98,14 +98,14 @@ const createRestoDetailsTemplate = (resto) => `
 `;
 
 const createLikeButton = () => `
-      <button aria-label="like this movie" id="button-like" class="like">
-         <i class="fa fa-heart-o" aria-hidden="true"></i>
+      <button aria-label="like this restaurant" id="like-button" class="thumbs_up">
+        <i class="fa-regular fa-thumbs-up"></i>
       </button>
 `;
 
 const createLikedButton = () => `
-      <button aria-label="unlike this movie" id="button-liked" class="like">
-        <i class="fa fa-heart" aria-hidden="true"></i>
+      <button aria-label="liked this restaurant" id="liked-button" class="thumbs_up">
+        <i class="fa-solid fa-thumbs-up"></i>
       </button>
     `;
 

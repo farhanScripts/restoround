@@ -339,22 +339,18 @@ header{
   color: var(--third-color)
 }
 
-.like {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #db0000;
+.thumbs_up{
+  width: 80px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: var(--third-color);
+  font-size: 30px;
+  border-radius: 10px;
+  border: 2px dashed var(--third-color);
 
   position: fixed;
   bottom: 16px;
   right: 16px;
-  border-radius: 50%;
-  border: 0;
-
-  font-size: 18px;
-  color: white;
   cursor: pointer;
 }
 
