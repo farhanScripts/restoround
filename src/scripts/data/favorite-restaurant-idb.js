@@ -5,16 +5,16 @@ const { DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME } = CONFIG;
 
 const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
   upgrade(database) {
-    database.createObjectStore(OBJECT_STORE_NAME, { keypath: 'id' });
+    database.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id' });
   },
 });
 
-const favoriteRestaurantIdb = {
+const FavoriteRestaurantIdb = {
   async getRestaurant(id) {
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
   async getAllRestaurant() {
-    return (await dbPromise).get(OBJECT_STORE_NAME);
+    return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async putRestaurant(resto) {
     return (await dbPromise).put(OBJECT_STORE_NAME, resto);
@@ -24,4 +24,4 @@ const favoriteRestaurantIdb = {
   },
 };
 
-export default favoriteRestaurantIdb;
+export default FavoriteRestaurantIdb;
