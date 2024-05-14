@@ -52,7 +52,7 @@ const createCommentsItems = (comments) =>
       <p>${comment.date}</p>
       <p>${comment.review}</p>
     </div> 
-    `
+    `,
   );
 // eslint-disable-next-line no-unused-vars
 const createRestoDetailsTemplate = (resto) => `
@@ -130,4 +130,5 @@ export {
   createRestoDetailsTemplate,
   createLikeButton,
   createLikedButton,
+  createCommentsItems,
 };

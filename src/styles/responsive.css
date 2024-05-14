@@ -21,6 +21,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  .resto-list{
+    gap: 5px;
+  }
   .hero__wrapper {
     padding-bottom: 80px;
   }

@@ -144,6 +144,7 @@ header{
 /* RESTO LIST CARD */
 .resto-list{
   margin-top: 20px;
+  gap: 10px;
   width: 85%;
   height: 100%;
   display: flex;
@@ -188,7 +189,8 @@ header{
 
 .details_anchor{
   text-decoration: none;
-  color: var(--third-color)
+  color: var(--third-color);
+  padding: 10px 0;
 }
     
 .resto_rating {
