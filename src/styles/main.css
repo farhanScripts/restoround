@@ -252,7 +252,7 @@ header{
 .resto_wrapper{
   width: 90%;
   height: fit-content;
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
